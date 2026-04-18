@@ -1,0 +1,611 @@
+---
+output: html_document
+---
+
+
+```{css, echo=FALSE}
+
+/* CUERPO DE LA PRESENTACIÓN*/
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-50deg, #F7F8F0, #1F6F5F, #6FCF97, #9CD5FF);
+    background-size: 400% 400%;
+    animation: moveGradient 45s ease infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 120px;
+}
+
+/* ANIMACIÓN */
+
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ESTILO PARA LAS TARJETAS DE "CRISTAL" */
+
+/* TARJETA PRINCIPAL */
+.glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 1000px;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* TARJETA MEDIANA */
+.glass-mediumcont {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 15px;
+    max-width: 450px;
+    color: white;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar-custom {
+    position: fixed; 
+    top: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    border-radius: 15px; 
+    margin-bottom: 30px;
+    width: 1000px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ESTILO DE LA IZQUIERDA */
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-brand h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-brand span {
+    font-family: 'Encabezado', sans-serif ;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ESTILO DERECHA */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+/* BARRA HIPERVÍCULOS */
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Encabezado';
+    transition: 0.3s;
+    padding: 8px 20px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5)
+}
+
+.nav-menu li a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+/* CONTENEDOR CON FONDO PARA TARJETAS PEQUEÑAS" */
+.flex-contback {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 300px;
+    box-shadow: 0 0px 32px rgba(0, 0, 0, 0.3);
+    overflow-wrap: break-word;
+}
+
+/* CONTENEDOR SIN FONDO PARA TEXTO "ACOPLADO" */
+.flex-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+/* ESTILO PARA TIPOGRAFÍAS */
+
+/* TIPOGRAFÍAS IMPORTADAS */
+@font-face {
+    font-family: 'Titulo'; /* NOMBRE PARA USAR EN EL CSS */
+    src: url('LEMONMILK-MediumItalic.otf') format('opentype'); /* RUTA DEL ARCHIVO */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Encabezado'; 
+    src: url('LEMONMILK-LightItalic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'texto'; 
+    src: url('LEMONMILK-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'elementos'; 
+    src: url('LEMONMILK-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ESTÍLO PARA TÍTULOS */
+
+.titulo{color: white;
+      text-align: left;
+      font-family: 'Titulo', sans-serif ;
+      font-size: 35px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);}
+      
+.tituloC{color: white;
+      text-align: center;
+      font-family: 'Titulo', sans-serif ;
+      font-size: 35px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);}
+    
+/* ESTÍLO PARA ENCABEZADOS */    
+.encabezado {color: white; 
+           font-family: 'Encabezado', sans-serif ;
+           font-size: 30px;
+           text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
+           
+.encabezadoC {color: white; 
+           font-family: 'Encabezado', sans-serif ;
+           font-size: 30px;
+           text-align: center;
+           text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
+    
+/* ESTÍLO PARA TEXTO NORMAL */    
+
+.limite-lectura {
+    max-width: 850px;
+    margin-left: 30% auto; 
+    margin-top: 30px;
+}
+
+.texto {color: white; 
+        font-family: 'texto', sans-serif ;
+        font-size: 18px;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
+
+.textoM {color: white; 
+         font-family: 'texto', sans-serif ;
+         font-size: 12px;
+         text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
+
+.elementos {color: white; 
+            font-family: 'elementos', sans-serif ;
+            font-size: 12px;
+            text-align: right;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
+      
+
+/* ESTILOS PARA FUNCIONES JAVA */
+.contenido-dinamico2 {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    text-align: left;
+    overflow: visible !important;
+    display: none;
+}
+
+#intro {
+    display: flex; 
+}
+
+```
+
+```{js, echo=FALSE}
+//FUNCIÓN DE APARICIÓN DE BLOQUE
+function cerrarTodos() {
+  // Seleccionamos ambos tipos de contenido si es necesario
+  var contenidos = document.querySelectorAll(".contenido-dinamico2");
+  for (var i = 0; i < contenidos.length; i++) {
+    contenidos[i].style.display = "none";
+  }
+}
+
+function mostrarContenido2(idContenido) {
+  var bloque = document.getElementById(idContenido);
+  
+  // Obtenemos el estilo actual (aunque esté en el CSS externo)
+  var displayActual = window.getComputedStyle(bloque).display;
+
+  if (displayActual === "flex") {
+    bloque.style.display = "none";
+  } else {
+    cerrarTodos(); // Cerramos cualquier otro abierto primero
+    bloque.style.display = "flex";
+  }
+}
+```
+
+<div class="navbar-custom">
+<div class="nav-brand">
+<div class= "titulo">Smart Cities</div>
+
+<span>Proyecto Big Final Big Data </span>
+</div>
+
+<div class="nav-menu">
+  <li><a class="intro" onclick="mostrarContenido2('intro')">INTRODUCCIÓN</a></li>
+  <li><a class="herra" onclick="mostrarContenido2('herra')">HERRAMIENTAS</a></li>
+  <li><a class="dash" onclick="mostrarContenido2('dash')">DASHBOARDS</a></li>
+  <li><a class="perso" onclick="mostrarContenido2('perso')">PERSONAL</a></li>
+</div>
+</div>
+
+<div id="intro" class="contenido-dinamico2">
+
+<div class = "limite-lectura">
+<div class="titulo"> INTRODUCCIÓN </div>
+<div class = "texto">
+
+El volumen, la velocidad y variedad de datos son aspectos fundamentales en Big Data que conforme pasa el tiempo crecen mas y mas, debido a esto se requieren arquitecturas y herramientas que sean capaces de cumplir las tres "V" mencionadas anteriormente.
+
+Por medio de este proyecto veremos la implementación de estas tecnologías y arquitecturas mediante el tema de "Smart Cities" la bsuqueda de rutas alternas para evitar el congestionamiento de rutas.
+
+</div>
+</div>
+
+<div class="glass-container"> 
+<div class= "titulo"> OBJETIVOS </div>
+
+<div class = "texto">
+
+Para este proyecto se busca la predicción de congestión vehicular gracias a datos generados por sensores y datos históricos para predecir patrones de movilidad y por medio de IA tomar decisiones preventivas.
+
+</div>
+
+<div class = "encabezadoC"> Objetivos Generales </div>
+
+<div class="flex-container"> 
+
+  <div class = "glass-mediumcont">  
+
+  <div class = "texto"> 
+  
+  Desarrollo e integración de una capa batch para datos históricos. 
+  
+  </div> 
+
+  </div>
+  
+  <div class = "glass-mediumcont">  
+
+  <div class = "texto"> 
+  
+  Modelo de clasificación supervisada para la categorización de congestión con un 85% de precisión. 
+  
+  </div> 
+  
+  </div>
+
+  </div>
+  
+<div class="flex-container"> 
+
+  <div class = "glass-mediumcont">  
+
+  <div class = "texto"> 
+  
+  Implementar capacidades de predicción para la anticipación de congestiones severas.
+  
+  </div> 
+
+  </div>
+  
+  <div class = "glass-mediumcont">  
+
+  <div class = "texto"> 
+  
+ Capa de visualización mediante un dashboard que presente distintas métricas que muestren el congestionamiento víal. 
+  
+  </div> 
+</div>
+</div>
+
+</div>
+
+<div class = "limite-lectura">
+
+<div class= "tituloC"> FUENTES DE DATOS  </div>
+
+</div>
+
+
+<div class="flex-container"> 
+  
+  <div class = "glass-mediumcont">
+  
+  <div class = "elementos"> Dataset Barcelona </div>
+
+  <div class = "titulo"> DATASET </div> 
+
+  <div class = "texto"> Dataset histórico de Barcelona con 6 meses de recopilación. </div>
+  </div>
+
+  <div class = "glass-mediumcont">  
+  
+  <div class = "elementos"> Simulación </div>
+
+  <div class = "titulo"> SUMO </div> 
+
+  <div class = "texto"> Simulación para obtención de datos basados en el dataset de Barcelona</div>
+  </div>
+  
+  </div>
+  
+<div class = "limite-lectura">
+
+<div class= "titulo"> SUMO  </div>
+
+<div class= "texto"> 
+
+Por medio de la herramienta osmWebWizard se crea una simulación de San José con los siguientes elementos claves:
+
+</div>
+
+<div class="flex-container"> 
+
+
+</div>
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> 5x5 </div>
+
+  <div class = "titulo"> DISTANCIA </div> 
+
+  <div class = "texto"> Utilizando 5 kilómetros a la redonda.</div>
+  </div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "elementos"> 2022 - 2023 </div>
+
+  <div class = "titulo"> 240 </div> 
+
+  <div class = "texto"> Con un aproximado de 240 vehículos por kilómetro</div>
+  </div>
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> 26% son de Motos </div>
+
+  <div class = "titulo"> 62% </div> 
+
+  <div class = "texto"> Los vehículos representan el 62% de la flota acumulada</div>
+  </div>
+  
+</div>
+
+
+  </div>
+</div>
+
+
+</div>
+
+
+<div id="herra" class="contenido-dinamico2">
+
+<div class = "limite-lectura">
+
+<div class="titulo"> AAAAAAAAAA </div>
+<div class = "texto">
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+
+</div>
+</div>
+
+<div class="glass-container"> 
+<div class= "titulo"> AAAAAAAAAAAA </div>
+
+<div class = "texto">
+
+La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio. 
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+</div>
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">  
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Mini texto＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+  
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Martinica＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  </div>
+</div>
+</div>
+
+
+<div id="dash" class="contenido-dinamico2">
+
+<div class = "limite-lectura">
+
+<div class="titulo"> PENE </div>
+<div class = "texto">
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+
+</div>
+</div>
+
+<div class="glass-container"> 
+<div class= "titulo"> AAAAAAAAAAAA </div>
+
+<div class = "texto">
+
+La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio. 
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+</div>
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">  
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Mini texto＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+  
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Martinica＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  </div>
+</div>
+</div>
+
+
+<div id="perso" class="contenido-dinamico2">
+
+<div class = "limite-lectura">
+
+<div class="titulo"> ¿DONDE? </div>
+<div class = "texto">
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+
+</div>
+</div>
+
+<div class="glass-container"> 
+<div class= "titulo"> AAAAAAAAAAAA </div>
+
+<div class = "texto">
+
+La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio. 
+
+Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
+
+Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+</div>
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">  
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Mini texto＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+  
+  <div class = "flex-contback">  
+  
+  <div class = "textoM"> Martinica＼ </div>
+
+  <div class = "titulo"> QUEEEE </div> 
+
+  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  </div>
+
+  </div>
+</div>
+</div>
