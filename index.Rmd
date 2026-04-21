@@ -583,6 +583,58 @@ Docker es la columna vertebral del proyecto ya que esta es donde está almacenad
 
   </div>
 </div>
+
+<div class = "limite-lectura">
+
+<div class = "titulo"> RAILWAY </div>
+
+<div class = "texto">
+
+Docker es un servicio de nube que contiene aspectos que nos brindó ayuda a la hora de trabajar como su soporte con PostrgreSQL lo que nos permitió utilizar la misma base de datos o que al iniciar sesión se puede desde la cuenta de github estos elementos nos permitieron un mejor flucjo de trabajo.
+
+</div>
+
+<div class= "tituloC"> PYTHON </div>
+
+<div class = "texto">
+
+Python fue crucial en el momento de querer ingresar los datos a la base de datos esto gracias a los siguientes tres scripts:
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> Clasificación de Datos </div>
+
+  <div class = "titulo"> FIX_VEHICLES_TRIPS </div> 
+
+  <div class = "texto"> Este código es quien permite procesar los datos para su correcta inserción </div>
+  </div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "elementos"> Inserción de Datos </div>
+
+  <div class = "titulo"> SUMO_IMPORTER </div> 
+
+  <div class = "texto"> Permite la carga de datos de la simulación a la base en la nube </div>
+  </div>
+  
+  <div class = "flex-contback">  
+  
+  <div class = "elementos"> MIGRAR_RAILWAY_A_DOCKER </div>
+
+  <div class = "titulo"> RAILWAY </div> 
+
+  <div class = "texto"> Permite trasladar los datos que hay en la nube a la base local (docker) </div>
+  </div>
+
+  </div>
+
+</div>
+</div>
 </div>
 
 
