@@ -137,6 +137,25 @@ body {
     gap: 20px; 
 }
 
+
+/* ESTILO BOTÓN */
+.boton{
+        background-color: rgba(255, 255, 255, 0.1)
+        color: white;
+        font-family: "elementos";
+        padding: 18px 45px; 
+        border-radius: 50px; 
+        border: 1px solid rgba(111, 207, 151, 0.8); 
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;}
+    
+
 /* ESTILO PARA TIPOGRAFÍAS */
 
 /* TIPOGRAFÍAS IMPORTADAS */
@@ -197,9 +216,10 @@ body {
 /* ESTÍLO PARA TEXTO NORMAL */    
 
 .limite-lectura {
-    max-width: 850px;
+    max-width: 950px;
     margin-left: 30% auto; 
     margin-top: 30px;
+    overflow-wrap: break-word;
 }
 
 .texto {color: white; 
@@ -270,15 +290,15 @@ function mostrarContenido2(idContenido) {
 <div class="nav-menu">
   <li><a class="intro" onclick="mostrarContenido2('intro')">INTRODUCCIÓN</a></li>
   <li><a class="herra" onclick="mostrarContenido2('herra')">HERRAMIENTAS</a></li>
-  <li><a class="dash" onclick="mostrarContenido2('dash')">DASHBOARDS</a></li>
-  <li><a class="perso" onclick="mostrarContenido2('perso')">PERSONAL</a></li>
+  <li><a class="dash" onclick="mostrarContenido2('dash')">DASHBOARD</a></li>
+  <li><a class="perso" onclick="mostrarContenido2('perso')">CONCLUSION</a></li>
 </div>
 </div>
 
 <div id="intro" class="contenido-dinamico2">
 
 <div class = "limite-lectura">
-<div class="titulo"> INTRODUCCIÓN </div>
+<div class="tituloC"> INTRODUCCIÓN </div>
 <div class = "texto">
 
 El volumen, la velocidad y variedad de datos son aspectos fundamentales en Big Data que conforme pasa el tiempo crecen mas y mas, debido a esto se requieren arquitecturas y herramientas que sean capaces de cumplir las tres "V" mencionadas anteriormente.
@@ -289,7 +309,7 @@ Por medio de este proyecto veremos la implementación de estas tecnologías y ar
 </div>
 
 <div class="glass-container"> 
-<div class= "titulo"> OBJETIVOS </div>
+<div class= "tituloC"> OBJETIVOS </div>
 
 <div class = "texto">
 
@@ -378,16 +398,15 @@ Para este proyecto se busca la predicción de congestión vehicular gracias a da
   
 <div class = "limite-lectura">
 
+<div class = "elementos">
+Serie estadística 2023-2024
+</div>
+
 <div class= "titulo"> SUMO  </div>
 
 <div class= "texto"> 
 
 Por medio de la herramienta osmWebWizard se crea una simulación de San José con los siguientes elementos claves:
-
-</div>
-
-<div class="flex-container"> 
-
 
 </div>
 
@@ -401,7 +420,7 @@ Por medio de la herramienta osmWebWizard se crea una simulación de San José co
 
   <div class = "titulo"> DISTANCIA </div> 
 
-  <div class = "texto"> Utilizando 5 kilómetros a la redonda.</div>
+  <div class = "texto"> Utilizando 5 kilómetros a la redonda</div>
   </div>
 
   <div class = "flex-contback">  
@@ -412,141 +431,193 @@ Por medio de la herramienta osmWebWizard se crea una simulación de San José co
 
   <div class = "texto"> Con un aproximado de 240 vehículos por kilómetro</div>
   </div>
+  
   <div class = "flex-contback">
   
   <div class = "elementos"> 26% son de Motos </div>
 
-  <div class = "titulo"> 62% </div> 
+  <div class = "titulo"> TOTAL: 62% </div> 
 
   <div class = "texto"> Los vehículos representan el 62% de la flota acumulada</div>
   </div>
   
 </div>
 
+<div class = "limite-lectura">
 
+<div class = "titulo">
+
+DATASET
+
+</div>
+
+<div class = "texto">
+
+Datos históricos de Barcelona utilizados como base para la simulación, específicamente se utilizarán estos 3 dataset:
+
+</div>
+
+<div class="flex-container"> 
+  
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> Dataset de Tramos </div>
+
+  <div class = "titulo"> ITINERARIS </div> 
+
+  <div class = "texto"> Tramos y tiempo que se registraron en ellos</div>
   </div>
-</div>
+
+  <div class = "flex-contback">  
+  
+  <div class = "elementos"> Relació de trams per itinerari </div>
+
+  <div class = "titulo"> TRANSIT </div> 
+
+  <div class = "texto"> La cantidad de calles que posee un tramos</div>
+  </div>
+  
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> Relació de trams </div>
+
+  <div class = "titulo"> TRANSIT </div> 
+
+  <div class = "texto"> Ubicacion de los tramos </div>
+  </div>
 
 
 </div>
 
+<div class = "limite-lectura">
+
+<div class = "texto">
+
+Se trabajan los datasets para que nos de información clave para la simulación:
+
+</div>
+
+<div class="flex-container"> 
+
+<div class = "glass-mediumcont"> 
+
+<div class= "titulo"> DIVISIÓN HORARIA </div>
+
+<div class = "texto">
+
+Se realizó una división horaria por medio de intervalos (día, madrugada, noche etc) para conocer cuantos automóviles deben ir por a esas horas
+
+</div>
+
+</div>
+
+
+<div class = "glass-mediumcont"> 
+
+<div class= "titulo"> HORAS PICO </div>
+
+<div class = "texto">
+
+Además de las zonas horaria otra de las también se obtuvo las horas donde mayor cantidad de vehículos están en circulación
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+```{css, echo=FALSE}
+/* FINAL DE INTRO */
+```
+</div>
+</div>
 
 <div id="herra" class="contenido-dinamico2">
 
 <div class = "limite-lectura">
 
-<div class="titulo"> AAAAAAAAAA </div>
+<div class="tituloC"> HERRAMIENTAS UTILIZADAS </div>
 <div class = "texto">
 
-Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
-
-Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
-
-</div>
+Para este Proyecto se utilizaron distintas herramientas capaces de poder soportar y facilitar el proyecto.  
 </div>
 
 <div class="glass-container"> 
-<div class= "titulo"> AAAAAAAAAAAA </div>
+<div class= "tituloC"> DOCKER </div>
 
 <div class = "texto">
 
-La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio. 
-
-Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
-
-Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
-</div>
-
+Docker es la columna vertebral del proyecto ya que esta es donde está almacenado todo, este contenedor permite que sin importar el equipo que se utilice todos tengan la misma versión de los programas a utilizar. 
 </div>
 
 <div class="flex-container"> 
   
-  <div class = "flex-contback">  
+  <div class = "flex-contback">
+  
+  <div class = "elementos"> Base de Datos </div>
 
-  <div class = "titulo"> QUEEEE </div> 
+  <div class = "titulo"> POSTGRESQL </div> 
 
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  <div class = "texto"> Base de Datos utilizada </div>
   </div>
 
   <div class = "flex-contback">  
   
-  <div class = "textoM"> Mini texto＼ </div>
+  <div class = "elementos"> Dashboards Dinámicos </div>
 
-  <div class = "titulo"> QUEEEE </div> 
+  <div class = "titulo"> GRAFANA </div> 
 
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  <div class = "texto"> Herramienta para realizar Dashboards </div>
   </div>
   
   <div class = "flex-contback">  
   
-  <div class = "textoM"> Martinica＼ </div>
+  <div class = "elementos"> BASE EN NUBE </div>
 
-  <div class = "titulo"> QUEEEE </div> 
+  <div class = "titulo"> RAILWAY </div> 
 
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
+  <div class = "texto"> Base de datos alojada en la nube </div>
   </div>
 
   </div>
 </div>
 </div>
 
+
+```{css, echo=FALSE}
+/* FINAL HERRAMIENTAS*/
+```
+</div>
+</div>
 
 <div id="dash" class="contenido-dinamico2">
 
 <div class = "limite-lectura">
 
-<div class="titulo"> PENE </div>
+<div class="titulo"> DASHBOARD </div>
 <div class = "texto">
 
-Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
-
-Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+Se realizaron varios gráficos para mostrar de manera visual los datos obtenidos. 
 
 </div>
 </div>
 
 <div class="glass-container"> 
-<div class= "titulo"> AAAAAAAAAAAA </div>
 
-<div class = "texto">
-
-La vida de un crítico es sencilla en muchos aspectos, arriesgamos poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio a nuestro juicio. 
-
-Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
-
-Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las nuevas creaciones, lo nuevo, necesita amigos. 
+<div class="texto">
+Debido a las políticas de seguridad de la red, el dashboard se mostrará por medio de un botón.
+</div>
+    
+<a href="http://localhost:3000/public-dashboards/ebf843290f7249278ceccb8289a45c7e" 
+target="_blank" 
+class="boton" 
+style="color: white; text-decoration: none;">
+Dashboards
+</a>
 </div>
 
-</div>
-
-<div class="flex-container"> 
-  
-  <div class = "flex-contback">  
-
-  <div class = "titulo"> QUEEEE </div> 
-
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
-  </div>
-
-  <div class = "flex-contback">  
-  
-  <div class = "textoM"> Mini texto＼ </div>
-
-  <div class = "titulo"> QUEEEE </div> 
-
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
-  </div>
-  
-  <div class = "flex-contback">  
-  
-  <div class = "textoM"> Martinica＼ </div>
-
-  <div class = "titulo"> QUEEEE </div> 
-
-  <div class = "texto"> Holaaaaaaaaaaaaaaaa </div>
-  </div>
-
-  </div>
 </div>
 </div>
 
@@ -555,7 +626,7 @@ Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende al
 
 <div class = "limite-lectura">
 
-<div class="titulo"> ¿DONDE? </div>
+<div class="titulo"> PARTE FINAL </div>
 <div class = "texto">
 
 Prosperamos con las críticas negativas, divertidas de escribir y de leer, pero la triste verdad que debemos afrontar es que en el gran orden de las cosas, cualquier basura tiene más significado que lo que deja ver nuestra crítica. 
@@ -566,7 +637,7 @@ Pero en ocasiones el crítico si se arriesga cada vez que descubre y defiende al
 </div>
 
 <div class="glass-container"> 
-<div class= "titulo"> AAAAAAAAAAAA </div>
+<div class= "titulo"> PARTE FINAL </div>
 
 <div class = "texto">
 

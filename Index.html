@@ -465,6 +465,19 @@ overflow-wrap: break-word;
 display: flex;
 justify-content: center; gap: 20px; }
 
+.boton{
+background-color: rgba(255, 255, 255, 0.1)
+color: white;
+font-family: "elementos";
+padding: 18px 45px; border-radius: 50px; border: 1px solid rgba(111, 207, 151, 0.8); text-decoration: none;
+font-weight: bold;
+display: inline-block;
+transition: all 0.3s ease;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+text-transform: uppercase;
+letter-spacing: 1px;}
+
 
 @font-face {
 font-family: 'Titulo'; 
@@ -505,8 +518,9 @@ font-size: 30px;
 text-align: center;
 text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);}
  .limite-lectura {
-max-width: 850px;
+max-width: 950px;
 margin-left: 30% auto; margin-top: 30px;
+overflow-wrap: break-word;
 }
 .texto {color: white; font-family: 'texto', sans-serif ;
 font-size: 18px;
@@ -567,16 +581,16 @@ Smart Cities
 <a class="herra" onclick="mostrarContenido2(&#39;herra&#39;)">HERRAMIENTAS</a>
 </li>
 <li>
-<a class="dash" onclick="mostrarContenido2(&#39;dash&#39;)">DASHBOARDS</a>
+<a class="dash" onclick="mostrarContenido2(&#39;dash&#39;)">DASHBOARD</a>
 </li>
 <li>
-<a class="perso" onclick="mostrarContenido2(&#39;perso&#39;)">PERSONAL</a>
+<a class="perso" onclick="mostrarContenido2(&#39;perso&#39;)">CONCLUSION</a>
 </li>
 </div>
 </div>
 <div id="intro" class="contenido-dinamico2">
 <div class="limite-lectura">
-<div class="titulo">
+<div class="tituloC">
 INTRODUCCIÓN
 </div>
 <div class="texto">
@@ -591,7 +605,7 @@ rutas.</p>
 </div>
 </div>
 <div class="glass-container">
-<div class="titulo">
+<div class="tituloC">
 OBJETIVOS
 </div>
 <div class="texto">
@@ -661,15 +675,15 @@ Simulación para obtención de datos basados en el dataset de Barcelona
 </div>
 </div>
 <div class="limite-lectura">
+<div class="elementos">
+<p>Serie estadística 2023-2024</p>
+</div>
 <div class="titulo">
 SUMO
 </div>
 <div class="texto">
 <p>Por medio de la herramienta osmWebWizard se crea una simulación de
 San José con los siguientes elementos claves:</p>
-</div>
-<div class="flex-container">
-
 </div>
 </div>
 <div class="flex-container">
@@ -681,7 +695,7 @@ San José con los siguientes elementos claves:</p>
 DISTANCIA
 </div>
 <div class="texto">
-Utilizando 5 kilómetros a la redonda.
+Utilizando 5 kilómetros a la redonda
 </div>
 </div>
 <div class="flex-contback">
@@ -700,152 +714,172 @@ Con un aproximado de 240 vehículos por kilómetro
 26% son de Motos
 </div>
 <div class="titulo">
-62%
+TOTAL: 62%
 </div>
 <div class="texto">
 Los vehículos representan el 62% de la flota acumulada
 </div>
 </div>
 </div>
+<div class="limite-lectura">
+<div class="titulo">
+<p>DATASET</p>
 </div>
+<div class="texto">
+<p>Datos históricos de Barcelona utilizados como base para la
+simulación, específicamente se utilizarán estos 3 dataset:</p>
+</div>
+<div class="flex-container">
+<div class="flex-contback">
+<div class="elementos">
+Dataset de Tramos
+</div>
+<div class="titulo">
+ITINERARIS
+</div>
+<div class="texto">
+Tramos y tiempo que se registraron en ellos
+</div>
+</div>
+<div class="flex-contback">
+<div class="elementos">
+Relació de trams per itinerari
+</div>
+<div class="titulo">
+TRANSIT
+</div>
+<div class="texto">
+La cantidad de calles que posee un tramos
+</div>
+</div>
+<div class="flex-contback">
+<div class="elementos">
+Relació de trams
+</div>
+<div class="titulo">
+TRANSIT
+</div>
+<div class="texto">
+Ubicacion de los tramos
+</div>
+</div>
+</div>
+<div class="limite-lectura">
+<div class="texto">
+<p>Se trabajan los datasets para que nos de información clave para la
+simulación:</p>
+</div>
+<div class="flex-container">
+<div class="glass-mediumcont">
+<div class="titulo">
+DIVISIÓN HORARIA
+</div>
+<div class="texto">
+<p>Se realizó una división horaria por medio de intervalos (día,
+madrugada, noche etc) para conocer cuantos automóviles deben ir por a
+esas horas</p>
+</div>
+</div>
+<div class="glass-mediumcont">
+<div class="titulo">
+HORAS PICO
+</div>
+<div class="texto">
+<p>Además de las zonas horaria otra de las también se obtuvo las horas
+donde mayor cantidad de vehículos están en circulación</p>
+</div>
+</div>
+</div>
+</div>
+<style type="text/css">
+
+</style>
 </div>
 </div>
 <div id="herra" class="contenido-dinamico2">
 <div class="limite-lectura">
-<div class="titulo">
-AAAAAAAAAA
+<div class="tituloC">
+HERRAMIENTAS UTILIZADAS
 </div>
 <div class="texto">
-<p>Prosperamos con las críticas negativas, divertidas de escribir y de
-leer, pero la triste verdad que debemos afrontar es que en el gran orden
-de las cosas, cualquier basura tiene más significado que lo que deja ver
-nuestra crítica.</p>
-<p>Pero en ocasiones el crítico si se arriesga cada vez que descubre y
-defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las
-nuevas creaciones, lo nuevo, necesita amigos.</p>
-</div>
+<p>Para este Proyecto se utilizaron distintas herramientas capaces de
+poder soportar y facilitar el proyecto.</p>
 </div>
 <div class="glass-container">
-<div class="titulo">
-AAAAAAAAAAAA
+<div class="tituloC">
+DOCKER
 </div>
 <div class="texto">
-<p>La vida de un crítico es sencilla en muchos aspectos, arriesgamos
-poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio
-a nuestro juicio.</p>
-<p>Prosperamos con las críticas negativas, divertidas de escribir y de
-leer, pero la triste verdad que debemos afrontar es que en el gran orden
-de las cosas, cualquier basura tiene más significado que lo que deja ver
-nuestra crítica.</p>
-<p>Pero en ocasiones el crítico si se arriesga cada vez que descubre y
-defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las
-nuevas creaciones, lo nuevo, necesita amigos.</p>
-</div>
+<p>Docker es la columna vertebral del proyecto ya que esta es donde está
+almacenado todo, este contenedor permite que sin importar el equipo que
+se utilice todos tengan la misma versión de los programas a
+utilizar.</p>
 </div>
 <div class="flex-container">
 <div class="flex-contback">
+<div class="elementos">
+Base de Datos
+</div>
 <div class="titulo">
-QUEEEE
+POSTGRESQL
 </div>
 <div class="texto">
-Holaaaaaaaaaaaaaaaa
+Base de Datos utilizada
 </div>
 </div>
 <div class="flex-contback">
-<div class="textoM">
-Mini texto＼
+<div class="elementos">
+Dashboards Dinámicos
 </div>
 <div class="titulo">
-QUEEEE
+GRAFANA
 </div>
 <div class="texto">
-Holaaaaaaaaaaaaaaaa
+Herramienta para realizar Dashboards
 </div>
 </div>
 <div class="flex-contback">
-<div class="textoM">
-Martinica＼
+<div class="elementos">
+BASE EN NUBE
 </div>
 <div class="titulo">
-QUEEEE
+RAILWAY
 </div>
 <div class="texto">
-Holaaaaaaaaaaaaaaaa
+Base de datos alojada en la nube
 </div>
 </div>
 </div>
+</div>
+</div>
+<style type="text/css">
+
+</style>
 </div>
 </div>
 <div id="dash" class="contenido-dinamico2">
 <div class="limite-lectura">
 <div class="titulo">
-PENE
+DASHBOARD
 </div>
 <div class="texto">
-<p>Prosperamos con las críticas negativas, divertidas de escribir y de
-leer, pero la triste verdad que debemos afrontar es que en el gran orden
-de las cosas, cualquier basura tiene más significado que lo que deja ver
-nuestra crítica.</p>
-<p>Pero en ocasiones el crítico si se arriesga cada vez que descubre y
-defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las
-nuevas creaciones, lo nuevo, necesita amigos.</p>
+<p>Se realizaron varios gráficos para mostrar de manera visual los datos
+obtenidos.</p>
 </div>
 </div>
 <div class="glass-container">
-<div class="titulo">
-AAAAAAAAAAAA
-</div>
 <div class="texto">
-<p>La vida de un crítico es sencilla en muchos aspectos, arriesgamos
-poco y tenemos poder sobre aquellos que ofrecen su trabajo y su servicio
-a nuestro juicio.</p>
-<p>Prosperamos con las críticas negativas, divertidas de escribir y de
-leer, pero la triste verdad que debemos afrontar es que en el gran orden
-de las cosas, cualquier basura tiene más significado que lo que deja ver
-nuestra crítica.</p>
-<p>Pero en ocasiones el crítico si se arriesga cada vez que descubre y
-defiende algo nuevo, el mundo suele ser cruel con el nuevo talento; las
-nuevas creaciones, lo nuevo, necesita amigos.</p>
+<p>Debido a las políticas de seguridad de la red, el dashboard se
+mostrará por medio de un botón.</p>
 </div>
-</div>
-<div class="flex-container">
-<div class="flex-contback">
-<div class="titulo">
-QUEEEE
-</div>
-<div class="texto">
-Holaaaaaaaaaaaaaaaa
-</div>
-</div>
-<div class="flex-contback">
-<div class="textoM">
-Mini texto＼
-</div>
-<div class="titulo">
-QUEEEE
-</div>
-<div class="texto">
-Holaaaaaaaaaaaaaaaa
-</div>
-</div>
-<div class="flex-contback">
-<div class="textoM">
-Martinica＼
-</div>
-<div class="titulo">
-QUEEEE
-</div>
-<div class="texto">
-Holaaaaaaaaaaaaaaaa
-</div>
-</div>
+<p><a href="http://localhost:3000/public-dashboards/ebf843290f7249278ceccb8289a45c7e" target="_blank" class="boton" style="color: white; text-decoration: none;"> Dashboards </a></p>
 </div>
 </div>
 </div>
 <div id="perso" class="contenido-dinamico2">
 <div class="limite-lectura">
 <div class="titulo">
-¿DONDE?
+PARTE FINAL
 </div>
 <div class="texto">
 <p>Prosperamos con las críticas negativas, divertidas de escribir y de
@@ -859,7 +893,7 @@ nuevas creaciones, lo nuevo, necesita amigos.</p>
 </div>
 <div class="glass-container">
 <div class="titulo">
-AAAAAAAAAAAA
+PARTE FINAL
 </div>
 <div class="texto">
 <p>La vida de un crítico es sencilla en muchos aspectos, arriesgamos
